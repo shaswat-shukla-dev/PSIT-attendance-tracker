@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <img src="images/attendance-logo.png" class="logo" alt="PSIT Attendance Tracker Logo">
+  <h1>PSIT Attendance Tracker</h1>
+</header>
+
+<div class="container">
+
+  <!-- Display Counter -->
+ 
+  <!-- Input Form -->
+  <div class="card">
+    <h2>Attendance Calculator</h2>
+    <label>Total Academic Days:</label>
+    <input type="number" id="totalAcademicDays" class="form-input" min="0">
+
+    <label>Total Absent Days:</label>
+    <input type="number" id="totalAbsentDays" class="form-input" min="0">
+
+    <label>Total Delegations:</label>
+    <input type="number" id="totalDelegations" class="form-input" min="0">
+
+    <button onclick="calculateAttendance()">Calculate Attendance</button>
+  </div>
+
+   <div class="counter-display">
+    <span id="attendancePercentage">NaN%</span>
+  </div>
+  <p id="statusMessage" class="status-msg"></p>
+
+  <!-- Future Attendance -->
+  <div class="card">
+    <h2>Future Attendance Calculator</h2>
+
+    <label>Upcoming Academic Days:</label>
+    <input type="number" id="futureAcademicDays" class="form-input" min="0">
+
+    <label>Delegations You Can Get:</label>
+    <input type="number" id="futureDelegations" class="form-input" min="0">
+
+    <button onclick="calculateFutureAttendance()">Calculate Future Attendance</button>
+    <p id="futureResult" class="result-display"></p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <span>Made with ❤️ for PSIT Students(Unofficial)</span>
+  <span class="github-icon">💻</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
