@@ -41,4 +41,14 @@ A simple and intuitive **attendance calculator** built for **PSIT students** to 
 ---
 
 ## 📂 Project Structure
+psit-attendance-tracker/
+│
+├── index.html
+├── styles.css
+├── script.js
+├── README.md
+└── images/
+├── attendance-logo.png
+├── desktop-view.png
+└── mobile-view.png
 
