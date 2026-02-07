@@ -3,7 +3,7 @@
 A simple and intuitive **attendance calculator** built for **PSIT students** to track current attendance and plan future attendance efficiently.
 
 🚀 Live Demo: https://psit-attendance-tracker.netlify.app/ 
-👨‍💻 Created by: **Shaswat**
+👨‍💻 Created by: **Shaswat Shukla**
 
 ---
 
