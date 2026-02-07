@@ -1,61 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attendance Tracker</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="PSIT Attendance Tracker helps students calculate attendance percentage and plan absences." />
+  <meta name="keywords" content="PSIT, attendance calculator, student, Kanpur, tracker" />
+  <meta name="author" content="Shaswat" />
+
+  <meta property="og:title" content="PSIT Attendance Tracker" />
+  <meta property="og:description" content="Easily calculate attendance and plan absences with this free tool." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourproject.netlify.app" />
+
+  <title>Attendance Tracker : PSIT</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
 <header class="header">
-  <img src="images/attendance-logo.png" class="logo" alt="PSIT Attendance Tracker Logo">
-  <h1>PSIT Attendance Tracker</h1>
+  <img src="images/attendance-logo.png" class="logo" alt="PSIT Attendance Tracker Logo" />
+  <h1>PSIT Attendance Tracker <sub>by Shaswat</sub></h1>
 </header>
 
 <div class="container">
 
-  <!-- Display Counter -->
- 
-  <!-- Input Form -->
   <div class="card">
     <h2>Attendance Calculator</h2>
-    <label>Total Academic Days:</label>
+
+    <label>Total Academic Lectures:</label>
     <input type="number" id="totalAcademicDays" class="form-input" min="0">
 
-    <label>Total Absent Days:</label>
+    <label>Total Absent Lectures:</label>
     <input type="number" id="totalAbsentDays" class="form-input" min="0">
 
-    <label>Total Delegations:</label>
+    <label>OA Delegation Lectures:</label>
     <input type="number" id="totalDelegations" class="form-input" min="0">
 
     <button onclick="calculateAttendance()">Calculate Attendance</button>
   </div>
 
-   <div class="counter-display">
+  <div class="counter-display">
     <span id="attendancePercentage">NaN%</span>
   </div>
+
   <p id="statusMessage" class="status-msg"></p>
 
-  <!-- Future Attendance -->
   <div class="card">
     <h2>Future Attendance Calculator</h2>
 
-    <label>Upcoming Academic Days:</label>
+    <label>Future Total Academic Lectures:</label>
     <input type="number" id="futureAcademicDays" class="form-input" min="0">
 
-    <label>Delegations You Can Get:</label>
+    <label>Future OA Delegation:</label>
     <input type="number" id="futureDelegations" class="form-input" min="0">
 
     <button onclick="calculateFutureAttendance()">Calculate Future Attendance</button>
+
     <p id="futureResult" class="result-display"></p>
   </div>
 
 </div>
 
 <footer class="footer">
-  <span>Made with ❤️ for PSIT Students(Unofficial)</span>
-  <span class="github-icon">💻</span>
+  <span>Made with ❤️ for PSIT Students (Unofficial)</span>
+
+  <div class="social-links">
+    <a href="https://github.com/shaswat-shukla-dev" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/shaswat-shukla-a0724b3a8" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="mailto:shaswat.shukla.dev@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
 </footer>
 
 <script src="script.js"></script>

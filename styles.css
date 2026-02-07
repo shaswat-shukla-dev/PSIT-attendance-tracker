@@ -7,33 +7,17 @@ body {
 }
 
 .logo {
-  
-  padding-top: 2;
   width: 120px;
-  margin-bottom: 10px;
-  margin-top:10px;
+  margin: 10px 0;
 }
 
 .header {
-  
   text-align: center;
   margin-bottom: 20px;
 }
 
-.counter-display {
-  padding-top: 2;
-  text-align: center;
-  font-size: 3rem;
-  margin: 20px 0;
-  font-weight: bold;
-  color: #FFF1A1;
-}
-
-.status-msg {
-  font-size: 1.2rem;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 15px;
+header h1 sub {
+  font-size: 13px;
 }
 
 .container {
@@ -74,32 +58,65 @@ button:hover {
   background: #1fa89e;
 }
 
+.counter-display {
+  text-align: center;
+  font-size: 3rem;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #FFF1A1;
+}
+
+.status-msg {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
 .result-display {
   text-align: center;
   font-size: 1.1rem;
   margin-top: 10px;
 }
 
+/* Footer */
 .footer {
-  text-align: center;
-  margin-top: 25px;
-  font-size: 1rem;
-  color: #aaa;
+  margin-top: 30px;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #ccc;
+  flex-wrap: wrap;
 }
 
-.github-icon {
-  display: inline-block;
-  margin-left: 8px;
+.social-links {
+  display: flex;
+  gap: 18px;
+}
+
+.social-links a {
+  color: #f0f0f0;
   font-size: 1.4rem;
-  animation: blink 1.2s infinite ease-in-out;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-@keyframes blink {
-  50% { opacity: 0; }
+.social-links a:hover {
+  transform: scale(1.25);
+  color: #f24703;
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .counter-display {
     font-size: 2rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
 }

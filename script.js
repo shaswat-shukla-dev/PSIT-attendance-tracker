@@ -14,12 +14,23 @@ function displayStatus(percentage) {
     return;
   }
 
-  if (percentage >= 80) {
-    msg.style.color = "lightgreen";
-    msg.textContent = "Woof! You are just on the safe side! 🏳💚";
+  if (percentage >= 99) {
+    msg.style.color = "green";
+    msg.textContent = "99% effort, 100% reward — ₹5000 unlocked! 🏳💚";
   } 
-  else if (percentage >= 70) {
-    msg.style.color = "yellow";
+  else if(percentage>=97 &&percentage<99)
+  {
+    msg.style.color="lightgreen";
+    msg.textContent= "🏫✨97–99% attendance isn’t just discipline, it’s ₹3000 discipline!";
+
+  }
+  else if(percentage>=90)
+  {
+    msg.style.color="lightgreen";
+    msg.textContent="Above 90% attendance — no fines, only smiles!😄";
+  }
+  else if (percentage >= 85) {
+    msg.style.color = "red";
     msg.textContent = "You are in trouble! 🚩";
   } 
   else {
@@ -38,8 +49,8 @@ function calculateAttendance() {
     return;
   }
 
-  const presentDays = academic - absent + delegation;
-  const percentage = academic > 0 ? (presentDays / academic) * 100 : NaN;
+  
+  const percentage = academic > 0 ? 100-((( absent-delegation)/academic)*100) : NaN;
 
   document.getElementById('attendancePercentage').textContent = formatPercentage(percentage);
   displayStatus(percentage);
@@ -52,13 +63,21 @@ function calculateFutureAttendance() {
   const futureAcademic = parseFloat(document.getElementById('futureAcademicDays').value) || 0;
   const futureDelegation = parseFloat(document.getElementById('futureDelegations').value) || 0;
 
-  const totalFutureAcademic = academic + futureAcademic;
-  const currentPresent = academic - absent + delegation;
-  const futurePresent = currentPresent + futureAcademic + futureDelegation;
+  const MINIMUM_ATTENDANCE_PERCENTAGE = 90; // fixed threshold
 
-  const requiredPresent = (MINIMUM_ATTENDANCE_PERCENTAGE / 100) * totalFutureAcademic;
-  const allowableDelegations = Math.max(0, futurePresent - requiredPresent);
+  const totalFutureAcademic = academic + futureAcademic;
+
+  // Current effective absences (absent - delegation)
+  const currentEffectiveAbsences = absent - delegation;
+
+  // Required maximum absences to maintain 90%
+  const maxAllowedAbsences = ((100 - MINIMUM_ATTENDANCE_PERCENTAGE) / 100) * totalFutureAcademic;
+
+  // Future holidays you can take = maxAllowedAbsences - currentEffectiveAbsences - futureDelegation
+  const allowableHolidays = Math.max(0, Math.floor(maxAllowedAbsences - currentEffectiveAbsences - futureDelegation));
 
   document.getElementById('futureResult').textContent =
-    `You can take nearly ${Math.floor(allowableDelegations)} Delegations to maintain ${MINIMUM_ATTENDANCE_PERCENTAGE}%`;
+    `You can take nearly ${allowableHolidays} lectures holidays and still maintain ${MINIMUM_ATTENDANCE_PERCENTAGE}% attendance.`;
 }
+
+
